@@ -1,5 +1,5 @@
-# Symfony5 DDD skeleton
-Se trata de un ejemplo de uso de Symfony 5 con php8 y una estructura DDD, para utilizarlo como referencia de nuestras
+# Symfony6 DDD skeleton
+Se trata de un ejemplo de uso de Symfony 6 con php8 y una estructura DDD, para utilizarlo como referencia de nuestras
 aplicaciones/microservicios. Inicialmente está pensado para aplicaciones tipo REST, aunque es posible utilizarlo para
 otros fines.
 

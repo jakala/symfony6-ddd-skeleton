@@ -1,8 +1,16 @@
 # CHANGELOG
+## 2021-12-19
+### añadido test de healthCheck
+Añadimos un primer test de la infraestructura básica de la app.
+Cambiado un deprecated de **isMasterRequest** por **isMainRequest** en el ResponseListener
+
+## 2021-12-18
+### actualizado symfony a version 6.0
+Cambiado composer.json para empezar a usar symfony 6
 
 ## 2021-10-25
 ### Definida la Estructura de respuesta
-Se añade un servicio nuevo que recoje el response de nuestros controllers, y lo modifica dejando una estructura como 
+Se añade un servicio nuevo que recoge la response de nuestros controllers, y lo modifica dejando una estructura como 
 la siguiente:
 ```
 {
@@ -10,21 +18,21 @@ la siguiente:
   "data": {}|[]
 }
 ```
-siendo:
+Siendo:
   * status un valor que nos indica que la respuesta ha sido correcta,
   * data es un array o un objeto que contiene la respuesta.
 
 De esta manera nuestras apis siempre tienen un formato igual para los casos correctos.
 ## 2021-09-13
 ### Actualización de Logs
-Añadida línea de logs con un token único generado a traves de la sesion. De esta manera, se puede identificar toda la
-linea de logs. Un ejemplo:
+Añadida línea de logs con un token único generado a través de la sesión. De esta manera, se puede identificar toda la
+línea de logs. Un ejemplo:
 ```
 [2021-09-13T20:59:58.135132+00:00] [613fbbce20fe2] [1] [2.8610229492188E-6] request.ERROR:
 ```  
-  * El primer corchete contiene la fecha de la ejecucion de la linea de log.
-  * El segundo corchete presenta un token unico por la sesión
-  * El tercer corchete muestra el numero correlativo de instruccion log que se ha ejecutado.
+  * El primer corchete contiene la fecha de la ejecución de la línea de log.
+  * El segundo corchete presenta un token único por la sesión
+  * El tercer corchete muestra el número correlativo de instrucción log que se ha ejecutado.
   * El cuarto paso indica el tiempo (en microsegundos) de ejecución DESDE el inicio de la sesión.
 
 ### Nuevos comandos Make

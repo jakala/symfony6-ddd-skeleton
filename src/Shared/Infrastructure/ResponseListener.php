@@ -17,7 +17,7 @@ final class ResponseListener
 
         $data = json_decode($event->getResponse()->getContent(), true);
         $newData = [
-            'success' => true,
+            'status' => true,
             'data' => $data,
         ];
 
@@ -27,7 +27,7 @@ final class ResponseListener
     private function validate(ResponseEvent $event): bool
     {
         return match (true) {
-            !$event->isMasterRequest(), !$event->getResponse()->isSuccessful()=> false,
+            !$event->isMainRequest(), !$event->getResponse()->isSuccessful()=> false,
             default => true
         };
     }

@@ -23,7 +23,7 @@ final class ExceptionListener
         }
 
         $newData = [
-            'success' => false,
+            'status' => false,
             'errors' => $errors
         ];
 

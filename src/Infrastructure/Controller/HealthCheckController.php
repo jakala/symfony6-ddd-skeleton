@@ -9,9 +9,11 @@ use Symfony\Component\HttpFoundation\JsonResponse;
  */
 class HealthCheckController
 {
+    private const STATUS_OK = true;
+
     public function __invoke(): JsonResponse
     {
-        $status = ['status' => 'ok'];
+        $status = ['status' => self::STATUS_OK];
         return new JsonResponse($status);
     }
 }
