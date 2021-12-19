@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Shared\Infrastructure;
 
-final class MonologRequestProcessor
+final class CorrelationHeaderProcessor
 {
     private ?string $token = null ;
     private ?int $count = null ;
