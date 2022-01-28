@@ -1,0 +1,21 @@
+#!/bin/bash
+ERROR="\u001b[31mERROR \u001b[0m"
+WARN="\u001b[33mWARN \u001b[0m"
+PATTERN="^TICKET-[0-9]+"
+
+# first check branch name
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+if ! [[ "$BRANCH" =~ $PATTERN ]]; then
+    echo -e $ERROR " Bad branch name. Example: TICKET-434-task-about-something. you wrote: '" $BRANCH "'"
+    exit 1
+fi
+
+# now check commit message
+TICKET=`echo $BRANCH | grep -Po $PATTERN`
+MESSAGE=`head -n1 $1`
+
+# if message has not start with ticket, then add it
+if ! [[ "$MESSAGE" =~ $PATTERN ]]; then
+    echo -e $WARN fix commit message with ticket
+    echo "$TICKET: $MESSAGE">$1
+fi
