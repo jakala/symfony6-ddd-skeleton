@@ -8,15 +8,13 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class HealthCheckControllerTest extends TestCase
 {
-    /** @test */
-    public function test_check_returns_ok(): void
+    public function testCheckReturnsOk(): void
     {
         $controller = new HealthCheckController();
         $response = $controller();
-        self::assertInstanceOf(JsonResponse::class, $response);
         $result = json_decode($response->getContent(), true);
 
-        self::assertArrayHasKey('status', $result);
-        self::assertTrue($result['status']);
+        self::assertInstanceOf(JsonResponse::class, $response);
+        self::assertEmpty($result);
     }
 }

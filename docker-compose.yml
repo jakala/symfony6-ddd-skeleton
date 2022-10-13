@@ -2,7 +2,8 @@ version: '3.3'
 
 services:
   server:
-    container_name: "api"
+    container_name: ${APP_NAME}
+    restart: ${DEFAULT_RESTART}
     build: .
     ports:
       - "8000:8000"
