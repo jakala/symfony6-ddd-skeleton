@@ -40,3 +40,13 @@ fix-style:
 .PHONY: revert
 revert:
 	@git reset --hard
+
+# admin de consola para dockers
+.PHONY: docker-admin
+docker-admin:
+	@docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock lirantal/dockly
+	
+# comando git para ver los ficheros mas modificados de un proyecto
+.PHONY: top-modified
+top-modified:
+	@git log --pretty=format: --name-only | sort | uniq -c | sort -rg | grep '.php' | head -10
