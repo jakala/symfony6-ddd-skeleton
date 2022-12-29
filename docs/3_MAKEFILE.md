@@ -11,3 +11,5 @@ disponibles son:
 - `make check-style`: revisa el formato de los archivos php para ver si cumplen PSR12 (por defecto)
 - `make fix-style`: corrige el formato de los archivos php a PSR12.
 - `make metrics`: genera un informe de metricas, para consultar el avance de la complejidad ciclomatica del proyecto.
+- `make top-modified`: lista los diez archivos mas modificados en el proyecto.
+- `make docker-admin`: carga un gestor interactivo de docker de consola.
